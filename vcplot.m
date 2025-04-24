@@ -65,7 +65,7 @@ op.LegendLocation = 'Best';
 op.LegendOrientation = 'vertical'; %'vertical','horizontal'
 op.LegendItems = [];
 op.LegendFontSize = [];
-op.FaceAlpha = 0.7;
+op.FaceAlpha = 0.9;
 
 %% Update options
 op = updateoptions(op,varargin{:});
