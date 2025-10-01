@@ -269,6 +269,7 @@ if op.Plot.ShowLegend
     if strcmp(op.Plot.LegendLocation,'SouthOutside')
         legPos(1) = 0.5 - legPos(3)/2;
         legPos(2) = 0.01;
+        h.Legend.Position = legPos;
     elseif strcmp(op.Plot.LegendLocation,'EmptySlot')
         if nPlots<prod([op.Shape{:}])
             xIdx = (max(1,op.Shape{1}-1))*op.Shape{2};
@@ -277,8 +278,8 @@ if op.Plot.ShowLegend
             legPos(1) = xR(1)+(xR(3)-legPos(3))/2;
             legPos(2) = xL(2)+(xL(4)-legPos(4))/2;
         end
+        h.Legend.Position = legPos;
     end
-    h.Legend.Position = legPos;
 else
     h.Legend = [];
 end
