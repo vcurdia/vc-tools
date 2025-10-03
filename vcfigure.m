@@ -84,9 +84,11 @@ op.RecessionShades = [];
 op.RecessionShadesOptions = {};
 op.TitleList = {};
 op.TitleFontSize = [];
+op.XLabel = [];
 op.XLim = [];
 op.XTick = [];
 op.XTickLabel = [];
+op.YLabel = [];
 op.YLim = [];
 op.YGrid = [];
 op.AxesFontSize = [];
@@ -214,6 +216,9 @@ for jPlot=1:nPlots
     end
     ax = gca;
     if op.AxisTight, axis tight, end
+    if ~isempty(op.XLabel)
+        xlabel(op.XLabel)
+    end
     if ~isempty(op.XLim)
         ax.XLim = op.XLim;
     end
@@ -222,6 +227,9 @@ for jPlot=1:nPlots
     end
     if ~isempty(op.XTickLabel)
         ax.XTickLabel = op.XTickLabel;
+    end
+    if ~isempty(op.YLabel)
+        ylabel(op.YLabel)
     end
     if ~isempty(op.YLim)
         if size(op.YLim,3)==1
